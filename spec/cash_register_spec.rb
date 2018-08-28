@@ -70,6 +70,7 @@ describe 'CashRegister' do
       new_register = CashRegister.new
       new_register.add_item("eggs", 1.99)
       new_register.add_item("tomato", 1.76, 3)
+      # binding.pry
       expect(new_register.items).to eq(["eggs", "tomato", "tomato", "tomato"])
     end
   end
