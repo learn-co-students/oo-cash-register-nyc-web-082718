@@ -65,16 +65,16 @@ describe 'CashRegister' do
     end
   end
 
-  describe '#items' do
-    it 'returns an array containing all items that have been added' do
-      new_register = CashRegister.new
-      new_register.add_item("eggs", 1.99)
-      new_register.add_item("tomato", 1.76, 3)
-      expect(new_register.items).to eq(["eggs", "tomato", "tomato", "tomato"])
+    describe '#items' do
+      it 'returns an array containing all items that have been added' do
+        new_register = CashRegister.new
+        new_register.add_item("eggs", 1.99)
+        new_register.add_item("tomato", 1.76, 3)
+        expect(new_register.items).to eq(["eggs", "tomato", "tomato", "tomato"])
+      end
     end
-  end
 
-  describe '#void_last_transaction' do
+    describe '#void_last_transaction' do
     it 'subtracts the last transaction from the total' do
       cash_register.add_item("tomato", 1.76)
       expect{cash_register.void_last_transaction}.to change{cash_register.total}.from(1.76).to(0.0)
